@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Analysis</title>
+    <link rel="stylesheet" href="/static/disease.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="/static/disease.js" defer></script>
+</head>
+
+<header>
+    <header class="header">
+        <nav class="nav">
+          <div class="logo-container">
+            <img src="/static/images/download copy.png" alt="AgroVerse Logo" class="logo">
+            <div class="logo-name">AgroVerse</div>
+          </div>
+          <ul class="nav-links">
+            <li><a href="http://127.0.0.1:5000/">Home</a></li>
+            <li><a href="http://127.0.0.1:5001/">AI Chatbot</a></li>
+            <li><a href="http://127.0.0.1:5002/">Crop Recommendation</a></li>
+            <li><a href="http://127.0.0.1:5004/">Farmers Community</a></li>
+        </ul>
+        </nav>
+</header>
+
+
+<body>
+    <div class="content">
+        <h1>Plant Disease Analysis</h1>
+        
+        <!-- Form to upload image -->
+        <div class="upload-container">
+            <form id="upload-form" method="POST" enctype="multipart/form-data">
+                <div class="formflex">
+                    <div class="form-group">
+                        <div id="drop-area" class="drop-area">
+                        <label for="image" class="upload-label">Upload image to analyze the disease</label>
+                        <input type="file" id="image" name="image" accept="image/*" hidden required>
+                        <div id="drop-area" class="drop-area">
+                            <span>Drag and drop an image file here or click</span>
+                        </div>
+                        <div id="image-preview-container" style="margin: 20px; display: none;">
+                            <img id="image-preview" style="max-width: 150px; border-radius: 10px;" />
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" style="margin-top: 20px;">Analyze</button>
+            </form>
+        </div>
+        
+
+        <!-- Display prediction result (initially hidden) -->
+        <div class="result" style="display:none;">
+            <h2>Prediction:</h2>
+            <p id="prediction"></p> <!-- Prediction text will be inserted here -->
+        </div>
+
+        <!-- Button to download PDF (initially hidden) -->
+        <div class="buttons" style="display: none;">
+            <button id="download-pdf">Download PDF</button>
+        </div>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmers Community Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+          <div class="logo-container">
+            <img src="/static/images/download copy.png" alt="AgroVerse Logo" class="logo">
+            <div class="logo-name">AgroVerse</div>
+          </div>
+          <ul class="nav-links">
+            <li><a href="http://127.0.0.1:5000/">Home</a></li>
+            <li><a href="http://127.0.0.1:5001/">AI Chatbot</a></li>
+            <li><a href="http://127.0.0.1:5002/">Crop Recommentation</a></li>
+            <li><a href="http://127.0.0.1:5003/">Disease Detection</a></li>
+            
+        </ul>
+        </nav>
+      </header>
+      <div class="blockk">
+
+    <div class="container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar left-sidebar">
+            <div class="weather-widget">
+                <h3><i class="fas fa-cloud-sun"></i> Weather Updates</h3>
+                <div id="weather-info"></div>
+            </div>
+            <div class="farming-tips">
+                <h3><i class="fas fa-seedling"></i> Seasonal Tips</h3>
+                <div id="seasonal-tips"></div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div id="posts-container">
+                <!-- Posts will be dynamically added here -->
+            </div>
+            <button id="create-post-btn" class="create-post-btn">
+                <i class="fas fa-plus"></i>
+            </button>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar right-sidebar">
+            <div class="crop-calendar">
+                <h3><i class="fas fa-calendar-alt"></i> Crop Calendar</h3>
+                <div id="crop-calendar"></div>
+            </div>
+            <div class="organic-facts">
+                <h3><i class="fas fa-leaf"></i> Organic Facts</h3>
+                <div id="organic-facts"></div>
+            </div>
+        </aside>
+    </div>
+
+    <div id="post-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create New Post</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <textarea id="post-content" placeholder="Share your farming knowledge..."></textarea>
+                <div class="image-upload">
+                    <label for="post-image">
+                        <i class="fas fa-image"></i> Add Image
+                    </label>
+                    <input type="file" id="post-image" accept="image/*">
+                </div>
+                <div id="image-preview"></div>
+                <button id="submit-post" class="submit-post">
+                    <i class="fas fa-paper-plane"></i> Share Post
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/static/main.js"></script>
+</body>
+</html>
